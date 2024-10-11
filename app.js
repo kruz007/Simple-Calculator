@@ -1,67 +1,66 @@
-'use strict';
+"use strict";
 
-let addBtn = document.querySelector(".add");
-let minusBtn = document.querySelector('.minus');
-let multBtn = document.querySelector('.mult');
-let divBtn = document.querySelector('.div');
-let resetBtn = document.querySelector('.reset');
+let btnAdd = document.querySelector(".add");
+let btnMinus = document.querySelector(".minus");
+let btnMult = document.querySelector(".mult");
+let btnDiv = document.querySelector(".div");
+let btnReset = document.querySelector(".reset");
+let outputResult = document.querySelector("#result");
 
+function add() {
+  let input1 = document.querySelector("#inputValue1").value;
+  let input2 = document.querySelector("#inputValue2").value;
+  let output = Number(input1) + Number(input2);
 
-function add(){
-    let outputResult = document.querySelector('#result');
-    let input1 = document.querySelector('#inputValue1').value;
-    let input2 = document.querySelector('#inputValue2').value;
-    let output = Number(input1) + Number(input2)
-    if(input1<1 || input2<1){
-        alert('Both values must be inputed')
-    } else {outputResult.innerText = output;}
+  if (input1 === "" || input2 === "") {
+    alert("Both values must be inputed");
+  } else {
+    outputResult.innerText = output;
+  }
 }
-addBtn.addEventListener('click' , add)
+btnAdd.addEventListener("click", add);
 
-
-function minus(){
-    let outputResult = document.querySelector('#result');
-    let input1 = document.querySelector('#inputValue1').value;
-    let input2 = document.querySelector('#inputValue2').value;
-    let output = Number(input1) - Number(input2)
-    if(input1<1 || input2<1){
-        alert('Both values must be inputed')
-    } else {outputResult.innerText = output;}}
-minusBtn.addEventListener('click' , minus)
-
-
-function mult(){
-    let outputResult = document.querySelector('#result');
-    let input1 = document.querySelector('#inputValue1').value;
-    let input2 = document.querySelector('#inputValue2').value;
-    let output = Number(input1) * Number(input2)
-    if(input1<1 || input2<1){
-        alert('Both values must be inputed')
-    } else {outputResult.innerText = output;}}
-multBtn.addEventListener('click' , mult)
-
-
-function div(){
-    let outputResult = document.querySelector('#result');
-    let input1 = document.querySelector('#inputValue1').value;
-    let input2 = document.querySelector('#inputValue2').value;
-    let output = Number(input1) / Number(input2)
-    if(input1<1 || input2<1){
-        alert('Both values must be inputed')
-    } else {outputResult.innerText = output;}}
-divBtn.addEventListener('click' , div)
-
-
-function reset(){
-    let outputResult = document.querySelector('#result');
-    let input1 = document.querySelector('#inputValue1').value;
-    let input2 = document.querySelector('#inputValue2').value;
-    let output = Number(input1) + Number(input2)
-    outputResult.innerText = null;
+function minus() {
+  let input1 = document.querySelector("#inputValue1").value;
+  let input2 = document.querySelector("#inputValue2").value;
+  let output = Number(input1) - Number(input2);
+  if (input1 === "" || input2 === "") {
+    alert("Both values must be inputed");
+  } else {
+    outputResult.innerText = output;
+  }
 }
-resetBtn.addEventListener('click' , reset)
+btnMinus.addEventListener("click", minus);
 
+function mult() {
+  let input1 = document.querySelector("#inputValue1").value;
+  let input2 = document.querySelector("#inputValue2").value;
+  let output = Number(input1) * Number(input2);
+  if (input1 === "" || input2 === "") {
+    alert("Both values must be inputed");
+  } else {
+    outputResult.innerText = output;
+  }
+}
+btnMult.addEventListener("click", mult);
 
-let currentYear = new Date()
-let footerYear = document.querySelector('.date')
-footerYear.innerText = currentYear.getFullYear()
+function div() {
+  let input1 = document.querySelector("#inputValue1").value;
+  let input2 = document.querySelector("#inputValue2").value;
+  let output = Number(input1) / Number(input2);
+  if (input1 === "" || input2 === "") {
+    alert("Both values must be inputed");
+  } else {
+    outputResult.innerText = output;
+  }
+}
+btnDiv.addEventListener("click", div);
+
+function reset() {
+  outputResult.innerText = 0;
+}
+btnReset.addEventListener("click", reset);
+
+let date = new Date();
+let year = date.getFullYear();
+document.querySelector(".date").innerText = year;
